@@ -5,7 +5,11 @@ import {useContextState } from "../contextState";
 
 const HomeScreen = ({ navigation }) => {
     return (
-        <></>
+        <div>
+            <a>
+                <card></card>
+            </a>
+        </div>
     );
 };
 
