@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './LoginScreen.js';
+import contactos from './contactos';
 import HomeScreen from './HomeScreen.js';
 import DetalleScreen from './DetalleScreen.js';
 
@@ -12,12 +12,16 @@ export default function MyStack(){
     <NavigationContainer>
         <Stack.Navigator>
         <Stack.Screen
-            name="Log in"
-            component={LoginScreen}
-        />
-        <Stack.Screen
             name="Home"
             component={HomeScreen}
+        />
+        <Stack.Screen
+            name="contactos"
+            component={contactos}
+        />
+        <Stack.Screen
+            name="añadirContacto"
+            component={contactos}
         />
         <Stack.Screen
             name="Detalle"
