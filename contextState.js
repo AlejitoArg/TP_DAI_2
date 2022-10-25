@@ -1,7 +1,24 @@
 import React, { useContext } from "react"
 
 export const initialState = {
-    contactos:[]
+    contactos:[{
+        id: '1',
+        name: 'Juan',
+        phone_number: "12345678",
+        emergency_number: "SI"
+      },
+      {
+        id: '2',
+        name: 'Juana',
+        phone_number: "12345679",
+        emergency_number: "NO"
+      },
+      {
+        id: '3',
+        name: 'Juanita',
+        phone_number: "22345678",
+        emergency_number: "NO"
+      }]
 }
 
 export const ActionTypes = {
@@ -21,7 +38,7 @@ export const reducer = (state = {}, action) => {
             newContactos = state.contactos.filter(contacto => contacto?.id!=action.value?.id)
             return {
                 ...state,
-                menu: newContactos,
+                contactos: newContactos,
             };
         default:
             return state;
