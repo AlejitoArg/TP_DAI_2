@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import contactos from './contactos';
 import HomeScreen from './HomeScreen.js';
 import DetalleScreen from './DetalleScreen.js';
+import configuracionContactoEmergencia from './configuracionContactoEmergencia.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,8 +21,8 @@ export default function MyStack(){
             component={contactos}
         />
         <Stack.Screen
-            name="añadirContacto"
-            component={contactos}
+            name="configuracionContactoEmergencia"
+            component={configuracionContactoEmergencia}
         />
         <Stack.Screen
             name="Detalle"
