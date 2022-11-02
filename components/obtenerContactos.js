@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 import * as Contacts from 'expo-contacts';
 import {useState, useEffect} from 'react';
 
-export default getContactos = () =>{
+const getContactos = () =>{
 const [contactos, setContactos] = useState([]);
 useEffect(()=>{
     (async () => {
@@ -29,3 +29,4 @@ useEffect(()=>{
     }, [])
     return contactos
 }
+export default getContactos

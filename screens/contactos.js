@@ -2,9 +2,11 @@ import {useEffect, useState} from "react";
 import { SafeAreaView, StyleSheet, Button, Text, View, FlatList} from "react-native";
 import { ActionTypes, useContextState } from "../contextState";
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import obtenerContactos from "../components/obtenerContactos"
 const axios = require('axios');
 
 const Contactos = ({navigation}) => {
+  console.log(obtenerContactos())
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const { contextState, setContextState } = useContextState();
