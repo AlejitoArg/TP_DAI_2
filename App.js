@@ -1,13 +1,10 @@
-import * as React from 'react';
-import MyStack from './screens/navigation';
-import {ContextProvider } from "./contextState"
+import * as React from 'react'
+import MyStack from './screens/navigation'
 
 const App = () => {
     return (
-        <ContextProvider>
-            <MyStack/>
-        </ContextProvider>
-    );
-};
+        <MyStack/>
+    )
+}
 
-export default App;
+export default App

@@ -1,8 +1,7 @@
-import { StyleSheet, View, Text, ScrollView, TextInput, FlatList, TouchableOpacity, Image } from "react-native";
-import React from "react";
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-const axios = require('axios');
-import {useContextState } from "../contextState";
+import { StyleSheet, View, Text, ScrollView, TextInput, FlatList, TouchableOpacity, Image } from "react-native"
+import React from "react"
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper'
+const axios = require('axios')
 
 const HomeScreen = ({ navigation }) => {
     const DATA = [
@@ -10,14 +9,27 @@ const HomeScreen = ({ navigation }) => {
           id: '1',
           pageTo: 'contactos',
           title: "Ver contactos",
-          img: "../images/contacts.png"
+          img: "https://img.icons8.com/windows/512/contacts.png"
         },
         {
           id: '2',
-          pageTo: 'Juanita',
-          title: "Juanita",
+          pageTo: 'configuracionContactoEmergencia',
+          title: "Contacto de emergencia",
+          img: "https://cdn-icons-png.flaticon.com/512/7604/7604461.png"
         },
-    ];
+        {
+            id: '3',
+            pageTo: 'clima',
+            title: "Ver clima",
+            img: "https://cdn-icons-png.flaticon.com/512/129/129023.png"
+        },
+        {
+            id: '4',
+            pageTo: 'about',
+            title: "Acerca de",
+            img: "https://i.pinimg.com/originals/8a/7d/96/8a7d9602ffdac086bf7844dc3b605f30.png"
+        },
+    ]
 
     const card = ({item})=>(
         <TouchableOpacity
@@ -25,9 +37,9 @@ const HomeScreen = ({ navigation }) => {
             style={styles.Button}>
             <Image
                 style={styles.image}
-                source={require("../images/contacts.png")}
+                source={{uri: item.img}}
             />
-            {item.title}
+            <Text>{item.title}</Text>
         </TouchableOpacity>
     )
     return (
@@ -37,47 +49,13 @@ const HomeScreen = ({ navigation }) => {
             keyExtractor={item => item.id}
         />
         
-    );
-};
+    )
+}
 
 const styles = StyleSheet.create({
     body: {
         paddingTop: 20,
         flex: 1,
-    },
-    roundButton2: {
-        marginTop: 20,
-        width: 200,
-        height: 200,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        border: "5px solid #e485eb",
-        borderRadius: 100,
-        textAlign: "center",
-        marginLeft: "auto",
-        marginRight: "auto",
-        fontSize: 20,
-        fontFamily: "Lucida Console",
-        color: "black",
-        fontWeight: "bold"
-    },
-    roundButton3: {
-        marginTop: 15,
-        width: 170,
-        height: 170,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        border: "5px solid #38a3f9",
-        borderRadius: 100,
-        textAlign: "center",
-        marginLeft: "auto",
-        marginRight: "auto",
-        fontSize: 20,
-        fontFamily: "Lucida Console",
-        color: "black",
-        fontWeight: "bold"
     },
     Button: {
         marginTop: 15,
@@ -90,24 +68,6 @@ const styles = StyleSheet.create({
         marginLeft: "auto",
         marginRight: "auto",
         fontSize: 20,
-        fontFamily: "Lucida Console",
-        color: "black",
-        fontWeight: "bold"
-    },
-    roundButton5: {
-        marginBottom: 100,
-        width: 200,
-        height: 200,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        border: "5px solid blue ",
-        borderRadius: 100,
-        textAlign: "center",
-        marginLeft: "auto",
-        marginRight: "auto",
-        fontSize: 20,
-        fontFamily: "Lucida Console",
         color: "black",
         fontWeight: "bold"
     },
@@ -116,6 +76,6 @@ const styles = StyleSheet.create({
         height: 92,
     }
 
-});
+})
 
-export default HomeScreen;
+export default HomeScreen
